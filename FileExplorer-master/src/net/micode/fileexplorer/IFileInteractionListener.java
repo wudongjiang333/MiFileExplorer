@@ -24,7 +24,11 @@ import android.content.Intent;
 import android.view.View;
 
 import java.util.Collection;
-
+/**
+ * ÎÄ¼ş½»»¥¼àÌıÆ÷
+ * @author uidq0303
+ *
+ */
 public interface IFileInteractionListener {
 
     public View getViewById(int id);

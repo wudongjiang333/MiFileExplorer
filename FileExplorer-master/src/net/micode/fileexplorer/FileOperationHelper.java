@@ -46,7 +46,11 @@ public class FileOperationHelper {
 	private IOperationProgressListener mOperationListener;
 
 	private FilenameFilter mFilter;
-
+	/**
+	 * 监听文件变化的接口
+	 * @author uidq0303
+	 *
+	 */
 	public interface IOperationProgressListener {
 		void onFinish();
 

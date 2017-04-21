@@ -35,7 +35,11 @@ import net.micode.fileexplorer.MediaFile.MediaFileType;
 import java.io.FilenameFilter;
 import java.util.HashMap;
 import java.util.Iterator;
-
+/**
+ * 分类文件管理帮助类
+ * @author uidq0303
+ *
+ */
 public class FileCategoryHelper {
     public static final int COLUMN_ID = 0;
 
@@ -176,7 +180,10 @@ public class FileCategoryHelper {
         }
         return selection;
     }
-
+    
+    /*
+	 * 根据文件类型获取Uri
+	 */
     private Uri getContentUriByCategory(FileCategory cat) {
         Uri uri;
         String volumeName = "external";
@@ -201,7 +208,10 @@ public class FileCategoryHelper {
         }
         return uri;
     }
-
+    
+    /*
+	 * 获取排序语法
+	 */
     private String buildSortOrder(SortMethod sort) {
         String sortOrder = null;
         switch (sort) {
@@ -220,7 +230,10 @@ public class FileCategoryHelper {
         }
         return sortOrder;
     }
-
+    
+    /*
+	 * 获取媒体内容提供器中分类文件
+	 */
     public Cursor query(FileCategory fc, SortMethod sort) {
         Uri uri = getContentUriByCategory(fc);
         String selection = buildSelectionByCategory(fc);
@@ -237,7 +250,10 @@ public class FileCategoryHelper {
 
         return mContext.getContentResolver().query(uri, columns, selection, null, sortOrder);
     }
-
+    
+    /*
+	 * 获取分类文件信息
+	 */
     public void refreshCategoryInfo() {
         // clear
         for (FileCategory fc : sCategories) {

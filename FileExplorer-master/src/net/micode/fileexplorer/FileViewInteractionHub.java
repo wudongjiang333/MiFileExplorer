@@ -61,7 +61,11 @@ import net.micode.fileexplorer.FileOperationHelper.IOperationProgressListener;
 import net.micode.fileexplorer.FileSortHelper.SortMethod;
 import net.micode.fileexplorer.FileViewActivity.SelectFilesCallback;
 import net.micode.fileexplorer.TextInputDialog.OnFinishListener;
-
+/**
+ * 文件视图交互类
+ * @author uidq0303
+ *
+ */
 public class FileViewInteractionHub implements IOperationProgressListener {
     private static final String LOG_TAG = "FileViewInteractionHub";
 
@@ -929,7 +933,10 @@ public class FileViewInteractionHub implements IOperationProgressListener {
     public boolean isFileSelected(String filePath) {
         return mFileOperationHelper.isFileSelected(filePath);
     }
-
+    /**
+     * 不知道是什么东东
+     * @param m
+     */
     public void setMode(Mode m) {
         mCurrentMode = m;
     }
