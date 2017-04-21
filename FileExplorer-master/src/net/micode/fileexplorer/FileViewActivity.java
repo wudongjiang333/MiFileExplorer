@@ -24,6 +24,7 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.BroadcastReceiver;
@@ -81,7 +82,7 @@ public class FileViewActivity extends Fragment implements
     // memorize the scroll positions of previous paths
     private ArrayList<PathScrollPositionItem> mScrollPositionList = new ArrayList<PathScrollPositionItem>();
     private String mPreviousPath;
-    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
+    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {//根据SD卡的插拔更新UI显示
         @Override
         public void onReceive(Context context, Intent intent) {
 
@@ -334,7 +335,7 @@ public class FileViewActivity extends Fragment implements
         return mRootView.findViewById(id);
     }
 
-    @Override
+    @SuppressLint("Override") @Override
     public Context getContext() {
         return mActivity;
     }
